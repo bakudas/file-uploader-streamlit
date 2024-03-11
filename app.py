@@ -29,10 +29,10 @@ def main():
                     case "application/pdf":
                         try:
                             pdf_file = plumber.open(raw_text_file)
-                            p0 = pdf_file.pages[0]
-                            raw_text = p0.extract_text()
-                            st.info("Text from pdf file")
-                            st.write(raw_text)
+                            for page in pdf_file.pages:
+                                raw_text = page.extract_text()
+                                st.info(f"Text from {page}")
+                                st.write(raw_text)
                         except:
                             st.warning("PDF file fetching problem..")
                     case "application/vnd.openxmlformats-officedocument.wordprocessingml.document":

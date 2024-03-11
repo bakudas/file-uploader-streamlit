@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 streamlit = "*"
+pdfplumber = "*"
+docx2txt = "*"
+pipreqs = "*"
 
 [dev-packages]
 
